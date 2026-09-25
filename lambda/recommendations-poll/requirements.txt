@@ -1,0 +1,3 @@
+# Bundle a recent boto3/botocore so the `devops-agent` client is present
+# regardless of the Lambda runtime's baked-in SDK version.
+boto3>=1.35.0

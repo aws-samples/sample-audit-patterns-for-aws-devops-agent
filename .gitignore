@@ -1,0 +1,17 @@
+node_modules/
+cdk.out/
+dist/
+# Importing the handlers under test leaves bytecode inside the Lambda asset
+# directories, which the bundler's `cp -a` would ship into the function.
+__pycache__/
+.pytest_cache/
+*.js
+*.d.ts
+!vitest.config.ts
+.cdk.staging/
+*.log
+.DS_Store
+*.js.map
+build
+env/
+coverage/
