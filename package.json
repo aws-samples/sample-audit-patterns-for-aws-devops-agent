@@ -1,0 +1,35 @@
+{
+  "name": "sample-audit-patterns-for-aws-devops-agent",
+  "version": "0.1.0",
+  "license": "MIT-0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "clean": "rm -rf dist && rm -rf node_modules",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prepublishOnly": "npm run build && npm run test",
+    "test": "vitest run --coverage",
+    "synth": "cdk synth",
+    "deploy": "cdk deploy",
+    "destroy": "cdk destroy"
+  },
+  "devDependencies": {
+    "@tsconfig/node24": "^24.0.4",
+    "@types/node": "^22.0.0",
+    "@vitest/coverage-v8": "^4.1.11",
+    "aws-cdk": "^2.1139.0",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.5.0",
+    "vitest": "^4.1.11"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.266.0",
+    "constructs": "^10.3.0"
+  },
+  "bin": {
+    "devops-agent-audit-trail": "bin/app.js"
+  },
+  "description": "Audit trail pipeline for AWS DevOps Agent: captures the agent journal, recommendations and goal snapshots, lifecycle events, and control-plane changes, with a Glue/Athena query layer."
+}
